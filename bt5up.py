@@ -2,7 +2,7 @@
 # This is a update script for Backtrack 5.
 # Rewritten by: bl4ck5w4n aka MaXFX in BT Forum
 # Mail: bl4ck5w4n5@gmail.com
-# Blog: http://bl4ck5w4n.tk
+# Blog: http://bl4ck5w4n.blogspot.com
 # Original autor Sickness http://sickness.tor.hu (Coded in C)
 
 import  os, time, inspect,sys,fileinput
