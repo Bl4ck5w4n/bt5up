@@ -1,0 +1,119 @@
+V.: 0.1
+- Rewritten: the code of sickness in Python
+- Added: Option to download sickness script (C version)
+- Added: Control version, where you can see if you are using the latest version of bt5up
+- When you update the bt5up you dont need to restart the script, it will autoload
+- Added: Axel & apt-fast to make the upgrade fastter 
+- Added: FeedBack for GMail accounts only, where you can send some feedback without leaving bt5up
+--------------------------------------
+V.:0.2
+- Fixed: When moved to /bin/ or /usr/bin it gives an pyrit error and exists
+- Rewritten: the last_version() function to improve speed, know the script is working faster
+- Added: Clean temporary files on exit
+--------------------------------------
+V.:0.3
+- Added: Menu Fix BT5 Bugs to try to fix some common bugs or customize in BT5 
+- Added: Menu Fix BT5 - Ettercap GTK
+- Added: Menu Fix BT5 - Auto startx after login
+--------------------------------------
+V.:0.4
+- Added: In Menu Other - Wireshark svn
+- Added: Option to update all with/whitout Wireshark because it take to much time to compile
+- Removed: Ettercap GTK, because that solution wasnt working for most users i'll try to find a new way
+- Fixed: When updating bt5up from /bin or /usr/bin it crashes
+--------------------------------------
+V.:0.5
+- Fixed: SQLmap update
+- Fixed: getpwd when update Wireshark
+- Fixed: startx now checks the tty first
+- Added: BottleFeeding in Wireless & Telephony
+- Rewrote some of the code
+- Added: Now you can you arguments for automated update(eg. -v show version, -h help, -u update)
+--------------------------------------
+V.:0.6
+- Added: Autofix init.lua in Wireshark
+- Fixed: Some spelling...
+--------------------------------------
+V.:0.7
+- Removed: Sickness code (since the C version doesn't exists anymore)
+- Adjust: Metasploit to work with BT5 R1
+- Added: Option to Migrate from Backtrack 5 to Backtrack 5 R1 (32Bits)
+--------------------------------------
+V.:0.8
+- Rewrote some of the code
+- Added: New Additional Tools menu
+- Added: Install & Register Nessus 
+- Moved: BottleFeeding to Additional Tools
+- Moved: Axel & Apt-Fast to Additional Tools
+- Changed: Fix BT5 Bugs to Fix BT5 Bugs/Customize BT5
+- Added: Edit motd in Fix BT5 Bugs/Customize BT5
+- Added: HexorBase to Additional Tools
+- Added: SSLStrip update to Other menu
+- Fixed: Fimap now updates directly from svn
+--------------------------------------
+V.:0.9
+- Fixed: SSlStrip upgrade
+- Changed: Visual
+--------------------------------------
+V.:1.0
+- Fixed: apt-fast install
+- Added: Install FlashPlayer 64Bits in Fix BT5 Bugs to Fix BT5 Bugs/Customize BT5
+--------------------------------------
+V.:1.1
+- Removed: nmap OS FingerPrints update because it breaks nmap
+- Removed: FastTrack because its now integrated in SET
+- Removed: Migrate BT5 to BT5 R1 (The script is still online: http://bl4ck5w4n.tk/?p=144)
+--------------------------------------
+V.:1.2
+- Removed: FeedingBottle
+- Added:   Fern-Wifi-Cracker to Additional Tools
+- Added:   DIRB - URL Bruteforcer to Additional Tools
+- Added:   Patator Bruteforcer to Additional Tools
+- Fixed:   Menu bug and typos
+- Added:   Tracking log for failed install/update (/root/bt5up.log)
+- Changed: The way to check latest version, know its much faster to navigate the menus
+- Added:   Fix to pulseaudio
+- Added:   AutoStart Wicd
+- Added:   Nmap OS FingerPrints
+- Added:   New argument for WireShark update
+--------------------------------------
+V.:1.3
+- Fixed: aircrack-ng 
+- Fixed: Additional Tools install all 
+--------------------------------------
+V.:1.4
+- Removed: SSLstrip (Latest version already in R2)
+- Removed: Patator Bruteforcer (included in R2)
+- Removed: Dirb (included in R2)
+- Removed: Pyrit (included in R2)
+- Removed: aptfast (Server is down)
+- Removed: FlashPlayer 64Bits
+- Added: JoomScan Update
+- Added: WPScan Update
+- Fixed: Metasploit Update (New Path)
+- Fixed: Nikto update
+- Fixed: Broken warvox
+- Fixed: aircrack-ng
+- Moved: HexorBase to WEB & DATABASE
+--------------------------------------
+V.:1.5
+- Added: FernWifi Update
+- Added: Dedected Update
+- Added: Wifite Update
+- Added: BEEF Update
+- Added: SQLNinja Update
+- Added: FlashPlayer 11 to Fix BT5 Bugs/Customize BT5 Menu
+- Added: Now the Additional Tools have there own module, this way I dont need to create a new version of bt5up everytime a new tool is added.
+- Added: The new tools are now located in /pentest/bt5up/tools
+- Added: Crypter to Additional Tools
+- Added: Ghost Phisher to Additional Tools
+- Added: The Teenage Mutant Ninja Turtles project to Additional Tools
+- Added: MinidWep-GTK to Additional Tools
+- Added: The Mole to Additional Tools
+- Fixed: Paths from some tools to work with BT5 R3
+--------------------------------------
+V.:1.6
+- Fixed: import tools bug
+- Fixed: BeEF log typo
+- Changed: WPScan from svn to git
+  
