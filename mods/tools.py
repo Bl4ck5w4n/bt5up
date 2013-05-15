@@ -2,7 +2,7 @@
 # This is a module of bt5up for Additional Tools .
 # Autor: bl4ck5w4n aka MaXFX in BT Forum
 # Mail: bl4ck5w4n5@gmail.com
-# Blog: http://bl4ck5w4n.tk
+# Blog: http://bl4ck5w4n.blogspot.com/
 
 import  os, time, inspect,sys,fileinput
 from time import gmtime, strftime
