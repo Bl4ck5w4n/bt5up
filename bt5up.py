@@ -3,7 +3,7 @@
 # Rewritten by: bl4ck5w4n aka MaXFX in BT Forum
 # Mail: bl4ck5w4n5@gmail.com
 # Blog: http://bl4ck5w4n.blogspot.com
-# Original autor Sickness http://sickness.tor.hu (Coded in C)
+# Original idea Sickness http://sickness.tor.hu (Coded in C)
 
 import  os, time, inspect,sys,fileinput
 import smtplib, getopt
@@ -27,15 +27,15 @@ if os.path.isfile(mods+'tools.py'):
 	
 else:
    os.system('mkdir -p '+ mods)
-   os.system('cd ' + mods + ' && wget http://bl4ck5w4n.tk/bt5up/mods/tools.py -c -q') 
+   os.system('cd ' + mods + ' && wget https://raw.github.com/Bl4ck5w4n/bt5up/master/mods/tools.py -c -q') 
    sys.path.append(mods)
    
-#import tools
+import tools
    
 
 
 def get_version():
-      curversion = 1.6
+      curversion = 1.7
       return curversion
 
 def backtrack_update():
@@ -412,10 +412,8 @@ def wireshark():
 def update():
 	print("\033[1;31m [>]\033[1;m Updating BT5UP script.")
 	
-	os.system("cd /tmp && wget http://bl4ck5w4n.tk/wp-content/uploads/2011/07/bt5up.tar -c -q")
+	os.system("cd /tmp && wget https://raw.github.com/Bl4ck5w4n/bt5up/master/bt5up.py -c -q")
 	
-	if os.path.isfile("/tmp/bt5up.tar"):
-	    os.system("tar -xvf /tmp/bt5up.tar -C /tmp/ > /dev/null")
 	    
 	curfile = inspect.getfile(inspect.currentframe())
 	
@@ -530,24 +528,23 @@ def latest_version():
 	    ofile=open("/tmp/version.txt","r")
 	    lversion=ofile.readline()
 	else:
-	    os.system("cd /tmp && wget http://bl4ck5w4n.tk/wp-content/uploads/2011/07/version.txt -c -q")
-	    ofile=open("/tmp/version.txt","r")
+	    os.system("cd /tmp && wget https://raw.github.com/Bl4ck5w4n/bt5up/master/version -c -q")
+	    ofile=open("/tmp/version","r")
 	    lversion=ofile.readline()
 	
 	return lversion
 
 def clean_exit():
       print("\n\033[1;31m [>]\033[1;m Cleaning temporary files and leaving...")
-      if os.path.isfile("/tmp/version.txt"):
-	os.system("rm /tmp/version.txt")
-      if os.path.isfile("/tmp/bt5up.tar"):
-	os.system("rm /tmp/bt5up.tar")
+      if os.path.isfile("/tmp/version"):
+		os.system("rm /tmp/version")
+
       if os.path.isfile("/tmp/bt5up.py"):
-	os.system("rm /tmp/bt5up.py")
-      if os.path.isfile("/tmp/addtools_version.txt"):
-	os.system("rm /tmp/addtools_version.txt")
+		os.system("rm /tmp/bt5up.py")
+      if os.path.isfile("/tmp/addtools_version"):
+		os.system("rm /tmp/addtools_version")
 	
-      print("\n\033[1;31m [>]\033[1;m Thanks for using bt5up dont forget to visit: http://bl4ck5w4n.tk")
+      print("\n\033[1;31m [>]\033[1;m Thanks for using bt5up dont forget to visit: http://bl4ck5w4n.blogspot.com")
       print("\033[1;31m [>]\033[1;m If something went wrong check the log at /root/bt5up.log")
       print("\033[1;31m [>]\033[1;m For more options on how to use bt5up use: bt5up -h\n")
       
@@ -569,18 +566,18 @@ def header():
         print("------------------------------------------------------------------------------\033[1;m")
 	print("\033[1;37m	                 [Back||Track 5 R3 Update]\033[1;m")
         print(" Author: Bl4ck5w4n")
-        print(" Feedback/Bugs : bl4ck5w4n5@gmail.com || http://bl4ck5w4n.tk || @Bl4ck5w4n")
+        print(" Feedback/Bugs : bl4ck5w4n5@gmail.com || http://bl4ck5w4n.blogspot.com || @Bl4ck5w4n")
         print("\033[1;31m------------------------------------------------------------------------------\033[1;m")
-#        if (float(get_version()) < float(latest_version())):
-#	  print("		Installed Version: \033[1;31m" + str(get_version()) + "\033[1;m Latest Version:\033[1;37m " + str(latest_version()) +"\033[1;31m------------------------------------------------------------------------------\033[1;m") 
-#	else:
-#	  print("		Installed Version: \033[1;32m" + str(get_version()) + "\033[1;m Latest Version:\033[1;37m " + str(latest_version()) +"\033[1;31m------------------------------------------------------------------------------\033[1;m")
+        if (float(get_version()) < float(latest_version())):
+	  print("		Installed Version: \033[1;31m" + str(get_version()) + "\033[1;m Latest Version:\033[1;37m " + str(latest_version()) +"\033[1;31m------------------------------------------------------------------------------\033[1;m") 
+	else:
+	  print("		Installed Version: \033[1;32m" + str(get_version()) + "\033[1;m Latest Version:\033[1;37m " + str(latest_version()) +"\033[1;31m------------------------------------------------------------------------------\033[1;m")
 	
 	
 def changelog():
-	os.system("cd /tmp && wget http://bl4ck5w4n.tk/wp-content/uploads/2011/07/changelog.txt -o /dev/null")
-	os.system("less /tmp/changelog.txt")
-	os.remove("/tmp/changelog.txt") 
+	os.system("cd /tmp && wget https://raw.github.com/Bl4ck5w4n/bt5up/master/changelog -o /dev/null")
+	os.system("less /tmp/changelog")
+	os.remove("/tmp/changelog") 
 
 	
 def gmail():
@@ -901,7 +898,7 @@ def automated():
 	
         if o in("-v","--version"):
 	    print(" \n BT5UP V.: " +  str(get_version()) + " - Tool to keep your BackTrack Updated and get new tools\n Author: Bl4ck5w4n")
-	    print(" Feedback/Bugs: bl4ck5w4n5@gmail.com || http://bl4ck5w4n.tk || https://twitter.com/#!/Bl4ck5w4n\n")
+	    print(" Feedback/Bugs: bl4ck5w4n5@gmail.com || http://bl4ck5w4n.blogspot.com || https://twitter.com/#!/Bl4ck5w4n\n")
         elif o in ("-h", "--help"):
 	    print("\n\033[1;31m -----------------OPTIONS-----------------\033[1;m")
             print(" -v --version		VERSION")
@@ -936,7 +933,7 @@ def automated():
 	      fimap() 
 	      openvas()
 	      os.system("clear")
-	      print("\033[1;31m [>]\033[1;m Thanks for using bt5up, dont forget to visit: http://bl4ck5w4n.tk\n")
+	      print("\033[1;31m [>]\033[1;m Thanks for using bt5up, dont forget to visit: http://bl4ck5w4n.blogspot.com\n")
 
 
 if __name__=="__main__":
