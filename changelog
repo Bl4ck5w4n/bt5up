@@ -116,4 +116,9 @@ V.:1.6
 - Fixed: import tools bug
 - Fixed: BeEF log typo
 - Changed: WPScan from svn to git
+--------------------------------------
+V.:1.7
+- Changed: Site Url
+- Fixed: Broken links from the previous site
+- Removed: MinidWep-GTK from Additional Tools
   
