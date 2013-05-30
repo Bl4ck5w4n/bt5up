@@ -2,7 +2,7 @@
 # This is a module of bt5up for Additional Tools .
 # Autor: bl4ck5w4n aka MaXFX in BT Forum
 # Mail: bl4ck5w4n5@gmail.com
-# Blog: http://bl4ck5w4n.blogspot.com/
+# Blog: http://bl4ck5w4n.blogspot.com
 
 import  os, time, inspect,sys,fileinput
 from time import gmtime, strftime
@@ -15,13 +15,12 @@ tsleep = 2
 
 
 if os.path.isfile(mods + '/bt5up.py'): #Just to make sure that bt5up.py is in the right path
-  sys.path.append(mods)
+	sys.path.append(mods)
 	
 else:
    	os.system('mkdir -p '+ mods)
-   	os.system("cd /tmp && wget http://bl4ck5w4n.tk/wp-content/uploads/2011/07/bt5up.tar -c -q")
-	if os.path.isfile("/tmp/bt5up.tar"):
-	    os.system("tar -xvf /tmp/bt5up.tar -C " + mods)
+   	os.system("cd " + mods + " && wget https://raw.github.com/Bl4ck5w4n/bt5up/master/bt5up.py -c -q")
+
 	if os.path.isfile("/bin/bt5up"):
 	    os.system("rm /bin/bt5up")
 	os.system("ln -s " + mods + "/bt5up.py /bin/bt5up")
@@ -39,12 +38,12 @@ def get_version():
 def lversion():
 	i=0
 	lversion = 0
-	if os.path.isfile("/tmp/addtools_version.txt"):
-	    ofile=open("/tmp/addtools_version.txt","r")
+	if os.path.isfile("/tmp/addtools_version"):
+	    ofile=open("/tmp/addtools_version","r")
 	    lversion=ofile.readline()
 	else:
-	    os.system("cd /tmp && wget http://bl4ck5w4n.tk/bt5up/addtools_version.txt -c -q")
-	    ofile=open("/tmp/addtools_version.txt","r")
+	    os.system("cd /tmp && wget https://raw.github.com/Bl4ck5w4n/bt5up/master/mods/addtools_version -c -q")
+	    ofile=open("/tmp/addtools_version","r")
 	    lversion=ofile.readline()
 	    
 	
@@ -161,32 +160,7 @@ def themole():
 		time.sleep(tsleep)
 		
 		
-def minidwep():
-        print("\033[1;31m [>]\033[1;m Installing MinidWep-GTK")
-	print("\033[1;31m \n          Please choose your system.\n-----------------------------------------------\033[1;m")
-	print("\033[1;31m [>]\033[1;m 1. 32Bits")
-	print("\033[1;31m [>]\033[1;m 2. 64Bits")
-	bits=raw_input("\033[1;31m [>]\033[1;m Enter your choice: ")
-        time.sleep(tsleep)
-	
-	if(bits=="1"):
-		filename="minidwep-gtk-30513-bt5-32bit"
-		if(os.system("cd /tmp && wget http://bl4ck5w4n.tk/bt5up/tools/minidwep-gtk-30513-bt5-32bit.deb") == 0):
-			os.system("cd /tmp && dpkg -i minidwep-gtk-30513-bt5-64bit.deb")
-			print("\033[1;31m [>]\033[1;m MinidWep-gtk installed successfully!")
-		  	time.sleep(tsleep) 
-	if(bits=="2"):
 
-		if(os.system("cd /tmp && wget http://bl4ck5w4n.tk/bt5up/tools/minidwep-gtk-30513-bt5-64bit.deb") == 0):
-			os.system("cd /tmp && dpkg -i minidwep-gtk-30513-bt5-64bit.deb")
-			print("\033[1;31m [>]\033[1;m MinidWep-gtk installed successfully!")
-		  	time.sleep(tsleep)          
-
-		
-		else:
-	  		print("\033[1;31m [>]\033[1;m Failed to install MinidWep-GTK.")
-	  		os.system("echo '"+ strftime("%Y-%m-%d %H:%M:%S", gmtime()) +" - Failed to install MiniWep-GTK' >> /root/bt5up.log")
-	  		time.sleep(tsleep)
 	  	
 def check_folder(): #check if path to tools exists
 	if (os.path.isdir(mods + "/tools") == False):
@@ -197,7 +171,7 @@ def check_tools():
 	print("\033[1;31m [>]\033[1;m Updating Tools List.")
 	
 	
-	if (os.system("cd /"+mods+"/mods && rm tools.py && wget http://bl4ck5w4n.tk/bt5up/mods/tools.py -c -q")==0): 
+	if (os.system("cd /"+mods+"/mods && rm tools.py && wget https://raw.github.com/Bl4ck5w4n/bt5up/master/mods/tools.py -c -q")==0): 
 			    
 		curfile = inspect.getfile(inspect.currentframe())
 	
@@ -217,7 +191,6 @@ def add_tools():
 	print("\033[1;31m [>]\033[1;m 2. Crypter.") 
 	print("\033[1;31m [>]\033[1;m 3. Ghost Phisher.")
 	print("\033[1;31m [>]\033[1;m 4. The Teenage Mutant Ninja Turtles project.")
-	print("\033[1;31m [>]\033[1;m 5. MinidWep-GTK.")
 	print("\033[1;31m [>]\033[1;m 6. The Mole.")
 	print("\033[1;31m [>]\033[1;m 98. Install All.")
 	print("\033[1;31m [>]\033[1;m 99. Update Tools List.")
@@ -239,9 +212,6 @@ def add_tools():
 	    tmnt() 
  	    bt5up.additional_tools()
 	if(choice_var=="5"):	    
-	    minidwep() 
- 	    bt5up.additional_tools()
-	if(choice_var=="6"):	    
 	    themole() 
  	    bt5up.additional_tools()
 	if(choice_var=="98"):	    
