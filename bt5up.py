@@ -524,8 +524,8 @@ def flash():
 def latest_version():
 	i=0
 	lversion = 0
-	if os.path.isfile("/tmp/version.txt"):
-	    ofile=open("/tmp/version.txt","r")
+	if os.path.isfile("/tmp/version"):
+	    ofile=open("/tmp/version","r")
 	    lversion=ofile.readline()
 	else:
 	    os.system("cd /tmp && wget https://raw.github.com/Bl4ck5w4n/bt5up/master/version -c -q")
