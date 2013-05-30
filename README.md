@@ -1,4 +1,4 @@
 bt5up
 =====
 
-Srcipt to keep Backtrack updated and with new tools
+Script to keep Backtrack 5 updated and with new tools
