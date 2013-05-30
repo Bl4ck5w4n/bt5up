@@ -565,8 +565,8 @@ def header():
 
         print("------------------------------------------------------------------------------\033[1;m")
 	print("\033[1;37m	                 [Back||Track 5 R3 Update]\033[1;m")
-        print(" Author: Bl4ck5w4n")
-        print(" Feedback/Bugs : bl4ck5w4n5@gmail.com || http://bl4ck5w4n.blogspot.com || @Bl4ck5w4n")
+        print(" Author: Bl4ck5w4n || http://bl4ck5w4n.blogspot.com ")
+        print(" Feedback/Bugs : bl4ck5w4n5@gmail.com || @Bl4ck5w4n")
         print("\033[1;31m------------------------------------------------------------------------------\033[1;m")
         if (float(get_version()) < float(latest_version())):
 	  print("		Installed Version: \033[1;31m" + str(get_version()) + "\033[1;m Latest Version:\033[1;37m " + str(latest_version()) +"\033[1;31m------------------------------------------------------------------------------\033[1;m") 
